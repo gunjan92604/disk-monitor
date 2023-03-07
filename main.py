@@ -9,7 +9,7 @@ import subprocess
 
 
 BASE_URL = "http://localhost:61208/api/3"
-MAX_USAGE_PCT = 0
+MAX_USAGE_PCT = 100
 
 
 app = FastAPI()
@@ -90,7 +90,6 @@ def get_disk_stats(disk_name: str = None):
     
     :param disk_name: Name of disk
     """
-    #disk_stats = os.statvfs(
     disk_url = BASE_URL + "/diskio"
     disk_url = disk_url + f"/disk_name/{disk_name}" if disk_name else ""
     response = requests.get(disk_url)
