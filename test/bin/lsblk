@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat /tmp/mocked-outputs/lsblk-output.json

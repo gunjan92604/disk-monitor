@@ -1,0 +1,29 @@
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"                                                 
+UUID=aa2f8227-4fb5-493b-ae15-0d429862467a               /srv/cache/ssd_cache/00         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=d16832ed-ace2-4411-9c12-ec6d738e6573               /srv/cache/ssd_cache/01         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=88273f22-524b-4aae-8ffc-4c6bfb9c068c               /srv/cache/ssd_cache/02         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=8443de40-9a45-4e2e-a655-ad61adca52a5               /srv/cache/ssd_cache/03         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=93ed3146-c501-494b-80c0-fb3ade37eb14               /srv/cache/ssd_cache/04         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=4ed3bae3-1105-4584-a4ed-8a71319804b5               /srv/cache/ssd_cache/05         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=4b442844-3ae7-4c04-b03f-5c8aca74453f               /srv/cache/ssd_cache/06         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=8e22f564-ec60-4b8e-bebb-38dd9f57283a               /srv/cache/ssd_cache/07         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=aeb1180b-4c0f-4924-a9f9-e502ce80a828               /srv/cache/ssd_cache/08         ext4    user_xattr,noatime,nodev,noexec,i_version,nombcache             0 2
+
+#device cache-nvme created with "mkfs.ext4 -m 1 -i 32768 -L cache-nvme"
+UUID=1939b553-27c9-4357-90f1-b5c9e666a625               /srv/cache/ssd_cache/09         xfs     noatime,nodev,noexec                            0 2

@@ -1,0 +1,33 @@
+{
+  "errors": [
+    {
+
+      "error_count":0,
+      "sqid":0,
+      "cmdid":0,
+      "status_field":0,
+      "phase_tag":0,
+      "parm_error_location":0,
+      "lba":0,
+      "nsid":0,
+      "vs":0,
+      "trtype":0,
+      "cs":0,
+      "trtype_spec_info":0
+    },
+    {
+      "error_count":1,
+      "sqid":0,
+      "cmdid":0,
+      "status_field":0,
+      "phase_tag":0,
+      "parm_error_location":0,
+      "lba":0,
+      "nsid":0,
+      "vs":0,
+      "trtype":0,
+      "cs":0,
+      "trtype_spec_info":0
+    }
+  ]
+}

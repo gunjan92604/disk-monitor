@@ -1,0 +1,4 @@
+#!/bin/bash
+# run lsblk and return only results with nvme as transport
+lsblk -J -o NAME,LABEL,UUID,PARTUUID,PARTLABEL,MOUNTPOINT,TRAN | \
+  jq '{"blockdevices": [ .blockdevices[] | select(.tran == "nvme") ]}'

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+ARGS=()
+while [ $OPTIND -le "$#" ]
+do
+    if getopts o: flag
+    then
+        case "${flag}" in
+            o) format="${OPTARG}"
+        esac
+    else
+        ARGS+=("${!OPTIND}")
+        ((OPTIND++))
+    fi
+done
+
+if [ "${#ARGS[@]}" -gt 2 ]
+then
+    echo "Error! Expect exactly 2 positional parameters but got ${#ARGS[@]}!" && exit 1
+fi
+
+REPORT_TYPE="${ARGS[0]}"
+DRIVE_NUM="${ARGS[1]}"
+
+[ -f /tmp/bad-drives.txt ] || touch /tmp/bad-drives.txt
+
+BAD_DRIVES=("$(tr -d '\r' < /tmp/bad-drives.txt)")
+
+TEST_TYPE=$([[ " ${BAD_DRIVES[*]} " =~  ${DRIVE_NUM} ]] && echo "BAD" || echo "GOOD")
+
+case "${TEST_TYPE}" in
+    GOOD)
+        case "${REPORT_TYPE}" in
+            smart-log)
+                cat /tmp/nvme-outputs/good-smart.json
+                ;;
+            error-log)
+                cat /tmp/nvme-outputs/good-error.json
+                ;;
+            id-ctrl)
+                cat /tmp/nvme-outputs/id-ctrl.json
+                ;;
+        esac ;;
+    BAD)
+        case "${REPORT_TYPE}" in
+            smart-log)
+                cat /tmp/nvme-outputs/bad-smart.json
+                ;;
+            error-log)
+                cat /tmp/nvme-outputs/bad-error.json
+                ;;
+            id-ctrl)
+                cat /tmp/nvme-outputs/id-ctrl.json
+                ;;
+        esac
+        ;;
+esac

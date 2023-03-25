@@ -1,0 +1,28 @@
+#!/bin/bash
+
+IFS=$'\n\t'
+set -euo pipefail
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+[[ "$#" -eq 1 ]] || die "exactly 1 argument required, ${#} provided"
+
+case "${1}" in
+	/dev/nvme[0-1]n[0-1]) ;;
+	#/dev/nvme[0-9]n[0-9][0-9]) ;;
+	#/dev/nvme[0-9][0-9]n[0-9]) ;;
+	#/dev/nvme[0-9][0-9]n[0-9][0-9]) ;;
+	*) die "wrong nvme device name" ;;
+esac
+
+# nvme smartctl
+# using nvme_cli to get values missing in 'smartctl -a -j'
+nvme_smart_log=$(nvme smart-log -o json "${1}" 2>/dev/null) || die "smart-log failed for ${1}"
+nvme_id_ctrl=$(nvme id-ctrl -o json "${1}" 2>/dev/null) || die "id-ctrl failed for ${1}"
+nvme_error_log=$(nvme error-log -o json "${1}" 2>/dev/null) || die "error-log failed for ${1}"
+# print results
+jq -c -s '{"nvme_smart_log": .[0], "nvme_id_ctrl": .[1], "nvme_error_log": .[2]}' <<< \
+ "${nvme_smart_log}${nvme_id_ctrl}${nvme_error_log}"

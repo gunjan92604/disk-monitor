@@ -1,0 +1,269 @@
+{
+   "blockdevices": [
+      {
+         "name": "sda",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "sata",
+         "children": [
+            {
+               "name": "sda1",
+               "label": null,
+               "uuid": null,
+               "partuuid": "ddfbf1d9-f3e3-4634-810e-54faa50f61d0",
+               "partlabel": null,
+               "mountpoint": null,
+               "tran": null
+            },
+            {
+               "name": "sda2",
+               "label": "boot-boot",
+               "uuid": "1f3b218e-4534-48bc-9785-b98932475405",
+               "partuuid": "b194afa6-2734-4be9-8c29-430f9b0e657b",
+               "partlabel": null,
+               "mountpoint": "/boot",
+               "tran": null
+            },
+            {
+               "name": "sda3",
+               "label": "boot-roota",
+               "uuid": "9d2a9853-4a0b-4b8a-a8bb-4be09727ba5a",
+               "partuuid": "384eebfb-158e-4f39-8f88-ecaed2675717",
+               "partlabel": null,
+               "mountpoint": null,
+               "tran": null
+            },
+            {
+               "name": "sda4",
+               "label": "boot-rootb",
+               "uuid": "e466233a-8406-4aa6-928a-730cec6d50a4",
+               "partuuid": "de05658b-8c23-4c65-967f-3916871d1f2b",
+               "partlabel": null,
+               "mountpoint": "/",
+               "tran": null
+            },
+            {
+               "name": "sda5",
+               "label": "boot-srv",
+               "uuid": "2c7a6b8b-1eef-46ac-adaa-69ca3e27e9ee",
+               "partuuid": "fb75423b-6fef-4994-ac6b-10a661a1ac4a",
+               "partlabel": null,
+               "mountpoint": "/srv",
+               "tran": null
+            }
+         ]
+      },
+      {
+		   "name":"nvme0n1",
+         "label":null,
+         "uuid":null,
+         "partuuid":null,
+         "partlabel":null,
+         "mountpoint":null,
+         "tran":"nvme",
+         "children":[
+            {
+               "name":"nvme0n1p1",
+               "label":"cache-nvme",
+               "uuid":"aa2f8227-4fb5-493b-ae15-0d429862467a",
+               "partuuid":"bb5ab3ba-3eaf-4c28-afc8-6dcd43e45734",
+               "partlabel":"cache-nvme",
+               "mountpoint":"/srv/cache/ssd_cache/00",
+               "tran":"nvme"
+            }
+         ]
+      },
+      {
+		   "name":"nvme1n1",
+         "label":null,
+         "uuid":null,
+         "partuuid":null,
+         "partlabel":null,
+         "mountpoint":null,
+         "tran":"nvme",
+         "children":[
+            {
+               "name":"nvme1n1p1",
+               "label":"cache-nvme",
+               "uuid":"d16832ed-ace2-4411-9c12-ec6d738e6573",
+               "partuuid":"c386a837-d773-40da-8eed-9cb5a715873b",
+               "partlabel":"cache-nvme",
+               "mountpoint":"/srv/cache/ssd_cache/01",
+               "tran":"nvme"
+            }
+         ]
+	  },
+     {
+         "name": "nvme5n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme5n1p1",
+               "label": "cache-ssd",
+               "uuid": "678d01de-5e5f-4175-baf2-5553dd2d444f",
+               "partuuid": "f62b39c0-99d0-4f63-aad0-3babb7e509c6",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/05",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme2n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme2n1p1",
+               "label": "cache-ssd",
+               "uuid": "b0357e5f-886e-4399-9765-e91a03282918",
+               "partuuid": "a5462dd4-7473-4782-96a5-17633816ae06",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/02",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme3n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme3n1p1",
+               "label": "cache-ssd",
+               "uuid": "48fcee7b-cd09-4807-9524-fc778c315493",
+               "partuuid": "180a74db-6fff-480f-99e5-cae4ae9065f8",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/03",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme4n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme4n1p1",
+               "label": "cache-ssd",
+               "uuid": "55dddc7d-993b-48ac-8ba1-732957aeb959",
+               "partuuid": "5f0a2a08-df3f-4f74-acd4-64ec6d2c9193",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/04",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme8n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme8n1p1",
+               "label": "cache-ssd",
+               "uuid": "dd8613ea-6ded-4343-a589-563e232de2ed",
+               "partuuid": "98946063-52ac-4335-b4c1-45f745a4ebdf",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/08",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme9n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme9n1p1",
+               "label": "cache-ssd",
+               "uuid": "71d2fac1-6ebe-490e-839a-e8e284d3ba3c",
+               "partuuid": "98800245-d028-4618-b792-976cacca5f82",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/09",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme6n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme6n1p1",
+               "label": "cache-ssd",
+               "uuid": "2448d939-1016-4ebf-9b6c-b40e6ba8add8",
+               "partuuid": "f695b201-8074-48d3-9700-cfcb049e6216",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/06",
+               "tran": "nvme"
+            }
+         ]
+     },
+     {
+         "name": "nvme7n1",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "nvme",
+         "children": [
+            {
+               "name": "nvme7n1p1",
+               "label": "cache-ssd",
+               "uuid": "f0c04d34-7664-46e9-95fb-406159040a8a",
+               "partuuid": "5899fd45-c9d3-4b77-869e-d43141551e1c",
+               "partlabel": null,
+               "mountpoint": "/srv/cache/ssd_cache/07",
+               "tran": "nvme"
+            }
+         ]
+      },
+      {
+         "name": "sdb",
+         "label": null,
+         "uuid": null,
+         "partuuid": null,
+         "partlabel": null,
+         "mountpoint": null,
+         "tran": "sata"
+      }
+   ]
+}

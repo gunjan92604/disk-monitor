@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+
+nvme_path="$(which nvme)"
+lsblk_path="$(which lsblk)"
+df_path="$(which df)"
+
+nvme_dir="$(dirname "${nvme_path}")"
+lsblk_dir="$(dirname "${lsblk_path}")"
+df_dir="$(dirname "${df_path}")"
+
+[ -z "${nvme_dir}" ] || mv "${nvme_path}" "${nvme_dir}"/nvme_bak
+[ -z "${lsblk_dir}" ] || mv "${lsblk_path}" "${lsblk_dir}"/lsblk_bak
+mv "${df_path}" "${df_dir}"/df_bak
+#[ -e /etc/fstab ] && sudo mv /etc/fstab /etc/fstab_bak
+
+[ -z "${nvme_dir}" ] && nvme_dir=/usr/sbin
+[ -z "${lsblk_dir}" ] && lsblk_dir=/bin
+cp /usr/local/bin/nvme "${nvme_dir}"/nvme
+cp /usr/local/bin/lsblk "${lsblk_dir}"/lsblk
+cp /usr/local/bin/df "${df_dir}"/df
+cp /tmp/fstab-contents/fstab /etc/

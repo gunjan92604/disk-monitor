@@ -1,0 +1,28 @@
+#!/bin/bash
+
+ARGS=()
+
+while [ $OPTIND -le "$#" ]
+do
+    if getopts T: flag
+    then
+        case "${flag}" in
+            T) show_type=True;;
+            *) pass=True;;
+        esac
+    else
+        ARGS+=("${!OPTIND}")
+        ((OPTIND++))
+    fi
+done
+
+
+[ -z "${ARGS}" ] && cat /tmp/mocked-outputs/df-outputs/all-df.txt && exit 0
+
+#echo "${ARGS[@]}"
+cat /tmp/mocked-outputs/df-outputs/df-header
+
+for mountpoint in "${ARGS[@]}"; do
+    filename=$(grep -ir "${mountpoint}" /tmp/mocked-outputs/df-outputs/ | grep -v all-df | cut -d':' -f 1)
+    [ -f "${filename}" ] && cat "${filename}"
+done
